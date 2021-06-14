@@ -23,5 +23,4 @@ https://user-images.githubusercontent.com/70081663/120834417-9c146480-c580-11eb-
 
 ## Heroku app link: https://car-sales-predictor-app.herokuapp.com/
 
-
-
+Credits: The deployment of this app is inspired from the work of Krish Naik. Link:https://www.youtube.com/watch?v=p_tpQSY1aTs
