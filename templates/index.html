@@ -8,152 +8,102 @@
 </head>
 
 <body>
+<style>
 
-    <div style="color:black">
+    body{
+    background : linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('https://www.intelligenttransport.com/wp-content/uploads/used-cars-stock.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    }
+    div.transbox {
+       padding: 20px;
+  margin: 30px;
+  background-color: #2a2a31;
+  border: 1px solid rgb(201, 186, 186);
+  opacity: 0.8;
+ 
+
+}
+div.first{
+    width: 190px;
+    padding: 175px;
+    background-color: #2a2a31;
+    border: 1px solid rgb(201, 186, 186);
+    opacity: 0.8;
+   
+    
+}
+div.second{
+    width: 190px;
+    padding: 160px;
+    background-color: #2a2a31;
+    border: 1px solid rgb(201, 186, 186);
+    opacity: 0.8;
+    
+}
+
+div.third{
+    width: 190px;
+    padding: 100px;
+    background-color: #2a2a31;
+    border: 1px solid rgb(201, 186, 186);
+    opacity: 0.8;
+}
+</style>
+
+   
         <form action="{{ url_for('predict')}}" method="post">
-            <h2>Car Price Predictor</h2>
-            <h3>Model Year</h3>
-            <input id="first" name="Year" type="number ">
-            <h3>What was the on-road price?(In lakhs)</h3><br><input id="second" name="Present_Price" required="required">
-            <h3>Kilometers Driven till date?</h3><input id="third" name="Kms_Driven" required="required">
-            <h3>Number of previous owners(1/2/3) ?</h3><br><input id="fourth" name="Owner" required="required">
-            <h3>Engine type?</h3><br><select name="Fuel_Type_Petrol" id="fuel" required="required">
-                <option value="Petrol">Petrol</option>
-                <option value="Diesel">Diesel</option>
-                <option value="Diesel">CNG</option>
-            </select>
-            <h3>Are you a Dealer or an Individual</h3><br><select name="Seller_Type_Individual" id="resea" required="required">
-                <option value="Dealer">Dealer</option>
-                <option value="Individual">Individual</option>
-            </select>
-            <h3>Transmission type</h3><br><select name="Transmission_Mannual" id="research" required="required">
-                <option value="Mannual">Manual Car</option>
-                <option value="Automatic">Automatic Car</option>
-            </select>
-            <br><br><button id="sub" type="submit ">Calculate the Selling Price</button>
-            <br>
+            
+            <div class = 'transbox' ><h1><font style="color:cyan; font-size: 50px;"> <center> Used Cars Selling Price Predictor</center>   </font></h1></div>
+
+
+            <div class="first" style="position:fixed; left: 37px;"><font style="color: white;">
+                <h3><center> Model Year</center></h3>
+                <input id="first" name="Year" type="number ">
+                <br><br>
+                <h3>What was the on-road price?(In lakhs)</h3><input id="second" name="Present_Price" required="required">
+                <br><br>
+                 <h3><p>Kilometers Driven till date?</p></h3><input id="third" name="Kms_Driven" required="required">
+            </font>
+        </div>
 
 
 
 
+           <div class = "second" style="position: fixed; top:210px; left: 650px;"  ><font style="color: white;">
+
+                    <h3><font style="font-size: 20px;"> Number of previous owners?</font></h3><input id="fourth" name="Owner" required="required"><br>
+                <h3><font style="font-size: 20px;"> Engine type?  </font></h3><select name="Fuel_Type_Petrol" id="fuel" required="required">
+                    <option value="Petrol"><font style="font-size: 15px;">  Petrol </font></option>
+                    <option value="Diesel"><font style="font-size: 15px;">  Diesel</font></option>
+                    <option value="Diesel"><font style="font-size: 15px;">  CNG</font></option>
+                </select>
+                <br>
+                <h3><font style="font-size: 20px;">   Dealer /  Individual</font></h3><select name="Seller_Type_Individual" id="resea" required="required">
+                    <option value="Dealer"><font style="font-size: 15px;">Dealer</font></option>
+                    <option value="Individual"><font style="font-size: 15px;">Individual</font></option>
+                </select>
+                <h3><font style="font-size: 20px;"> Transmission type </font></h3><select name="Transmission_Mannual" id="research" required="required">
+                    <option value="Mannual"><font style="font-size: 15px;">Manual Car</font></option>
+                    <option value="Automatic"><font style="font-size: 15px;">Automatic Car</font></option>
+                </select>
+            </font>
+            </div>
+
+
+
+            <div class="third" style="position: fixed; left:1250px;top:300px" ><font style="color: white;">
+                <br><br><button id="sub" type="submit "><font style="font-size: 15px;">
+                    Calculate the Selling Price
+                </font></button>
+                <br><br><h3><font style = "color:cyan">{{ prediction_text }}</font><h3></h3>
+                <br>
+        </font>
+
+            </div>
         </form>
-
-
-
-        <br><br><h3>{{ prediction_text }}<h3>
-    </div>
-
-
-
-
-    <style>
-        body {
-            background-color: salmon;
-            text-align: center;
-            padding: 0px;
-        }
-        
-        #research {
-            font-size: 10px;
-            width: 120px;
-            height: 30px;
-            top: 30px;
-        }
-        
-        #box {
-            border-radius: 60px;
-            border-color: 45px;
-            border-style: solid;
-            font-family: cursive;
-            text-align: center;
-            background-color: rgb(168, 131, 61);
-            font-size: medium;
-            position: absolute;
-            width: 900px;
-            bottom: 9%;
-            height: 850px;
-            right: 30%;
-            padding: 0px;
-            margin: 0px;
-            font-size: 10px;
-        }
-        
-        #fuel {
-            width: 100px;
-            height: 50px;
-            text-align: center;
-            border-radius: 14px;
-            font-size: 10px;
-        }
-        
-        #fuel:hover {
-            background-color: coral;
-        }
-        
-        #research {
-            width: 99px;
-            height: 43px;
-            text-align: center;
-            border-radius: 14px;
-            font-size: 10px;
-        }
-        
-        #research:hover {
-            background-color: coral;
-        }
-        
-        #resea {
-            width: 99px;
-            height: 43px;
-            text-align: center;
-            border-radius: 14px;
-            font-size: 10px;
-        }
-        
-        #resea:hover {
-            background-color: coral;
-        }
-        
-        #sub {
-            width: 120px;
-            height: 43px;
-            text-align: center;
-            border-radius: 14px;
-            font-size: 10px;
-        }
-        
-        #sub:hover {
-            background-color: darkcyan;
-        }
-        
-        #first {
-            border-radius: 14px;
-            height: 25px;
-            font-size: 20px;
-            text-align: center;
-        }
-        
-        #second {
-            border-radius: 14px;
-            height: 25px;
-            font-size: 20px;
-            text-align: center;
-        }
-        
-        #third {
-            border-radius: 14px;
-            height: 25px;
-            font-size: 20px;
-            text-align: center;
-        }
-        
-        #fourth {
-            border-radius: 14px;
-            height: 25px;
-            font-size: 20px;
-            text-align: center;
-        }
-    </style>
+   
 </body>
-
 </html>
