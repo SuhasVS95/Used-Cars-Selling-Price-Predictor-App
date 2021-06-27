@@ -8,7 +8,9 @@ Dataset source: https://www.kaggle.com/nehalbirla/vehicle-dataset-from-cardekho?
 
 ## Demo:
 
-https://user-images.githubusercontent.com/70081663/120834417-9c146480-c580-11eb-95a1-b7d340006127.mp4
+
+https://user-images.githubusercontent.com/70081663/123542782-2fe4e500-d769-11eb-9ef9-3bc35d582cd6.mp4
+
 
 
 ## Tasks Completed:
